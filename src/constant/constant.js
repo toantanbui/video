@@ -4,7 +4,9 @@ export const path = {
     MENU: '/menu',
     DETAILEDINFOR: '/DetailedInfor',
     INFOR: '/infor',
-    LOGIN: '/login'
+    LOGIN: '/login',
+    ELEMENTS: '/elements',
+    ELEMENTS1: '/elements1'
 
 }
 

@@ -44,6 +44,14 @@ const Infor = () => {
                 </div>
                 <div className="row">
                     <div className="col-25">
+                        <label for="fname">ParameterName</label>
+                    </div>
+                    <div className="col-75">
+                        <input type="text" id="fname" name="firstname" placeholder="Your parameterName.." />
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-25">
                         <label for="fname">Duration</label>
                     </div>
                     <div className="col-75">

@@ -1,0 +1,20 @@
+.Elements1 {
+  border-width: 1px;
+  border-style: solid;
+  width: 290px;
+  height: 150px;
+  display: flex;
+  margin-bottom: 5px; }
+  .Elements1 .Elements1-image {
+    border-width: 1px;
+    border-style: solid;
+    width: 30%;
+    height: 100%;
+    display: flex; }
+  .Elements1 .Elements1-infor {
+    border-width: 1px;
+    border-style: solid;
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column; }

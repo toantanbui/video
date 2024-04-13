@@ -58,9 +58,58 @@ const DetailedInfor = () => {
 
             <div className='DetailedInfor-content'>
                 <div className='DetailedInfor-content-left'>
+                    <div className='DetailedInfor-content-left-top'>
+                        <div className='DetailedInfor-content-left-top-image'>
+                            <div className='DetailedInfor-content-left-top-image-image'></div>
+                            <div className='DetailedInfor-content-left-top-image-watch'>
+                                <span style={{ height: '50px', marginRight: '5px', }}>
+                                    <button type="button" class="btn btn-primary">Tập phim</button>
+                                </span>
+                                <span style={{ height: '50px' }}>
+                                    <button type="button" class="btn btn-warning">Xem phim</button>
+                                </span>
 
+
+                            </div>
+                        </div>
+                        <div className='DetailedInfor-content-left-top-infor'>
+                            <div className='DetailedInfor-content-left-top-infor-title'>Thạch Cảm Đan</div>
+                            <div className='DetailedInfor-content-left-top-infor-detail'>
+                                <span className='abcd'>Đạo diễn:&nbsp; <span style={{ fontFamily: 'fantasy' }}>
+                                    Nguyễn Văn A</span></span>
+                                <span className='abcd'>Đạo diễn:&nbsp; <span style={{ fontFamily: 'fantasy' }}>
+                                    Nguyễn Văn A</span></span>
+                                <span className='abcd'>Đạo diễn:&nbsp; <span style={{ fontFamily: 'fantasy' }}>
+                                    Nguyễn Văn A</span></span>
+                                <span className='abcd'>Đạo diễn:&nbsp; <span style={{ fontFamily: 'fantasy' }}>
+                                    Nguyễn Văn A</span></span>
+                                <span className='abcd'>Đạo diễn:&nbsp; <span style={{ fontFamily: 'fantasy' }}>
+                                    Nguyễn Văn A</span></span>
+                                <span className='abcd'>Đạo diễn:&nbsp; <span style={{ fontFamily: 'fantasy' }}>
+                                    Nguyễn Văn A</span></span>
+                                <span className='abcd'>Đạo diễn:&nbsp; <span style={{ fontFamily: 'fantasy' }}>
+                                    Nguyễn Văn A</span></span>
+                                <span className='abcd'>Đạo diễn:&nbsp; <span style={{ fontFamily: 'fantasy' }}>
+                                    Nguyễn Văn A</span></span>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div className='DetailedInfor-content-left-bottom'>
+                        <div className='DetailedInfor-content-left-bottom-title'>Nội dung</div>
+                        <div className='DetailedInfor-content-left-bottom-content'>
+                            makes a button appear pressed, and the disabled attribute makes a button unclickable. Note that elements do not support
+                            the disabled attribute and must therefore use the .disabled class to make it visually appear disabled.
+
+                        </div>
+
+                    </div>
                 </div>
-                <div className='DetailedInfor-content-right'></div>
+                <div className='DetailedInfor-content-right'>
+                    <div className='DetailedInfor-content-right-header'></div>
+                </div>
             </div>
             <div className='DetailedInfor-footer'>
                 <Footer />

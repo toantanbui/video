@@ -15,6 +15,8 @@ import Menu from './Menu/Menu';
 import DetailedInfor from './DetailedInfor/DetailedInfor';
 import Infor from './Infor/Infor';
 import Login from './Login/Login';
+import Elements from './Elements/Elements';
+import Elements1 from './Elements1/Elements1';
 
 
 
@@ -35,6 +37,8 @@ const App = () => {
           <Route path={path.DETAILEDINFOR} component={(DetailedInfor)} />
           <Route path={path.INFOR} component={(Infor)} />
           <Route path={path.LOGIN} component={(Login)} />
+          <Route path={path.ELEMENTS} component={(Elements)} />
+          <Route path={path.ELEMENTS1} component={(Elements1)} />
 
         </Switch>
       </Router>
