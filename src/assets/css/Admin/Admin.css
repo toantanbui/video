@@ -1,0 +1,70 @@
+.admin {
+  border-width: 1px;
+  border-style: solid;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column; }
+  .admin .admin-menu {
+    border-width: 1px;
+    border-style: solid;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column; }
+  .admin .admin-table {
+    border-width: 1px;
+    border-style: solid;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column; }
+    .admin .admin-table .admin-table-top {
+      border-width: 1px;
+      border-style: solid;
+      width: 100%;
+      height: 80%;
+      display: flex; }
+      .admin .admin-table .admin-table-top table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%; }
+      .admin .admin-table .admin-table-top td,
+      .admin .admin-table .admin-table-top th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px; }
+      .admin .admin-table .admin-table-top tr:nth-child(even) {
+        background-color: #dddddd; }
+    .admin .admin-table .admin-table-bottom {
+      border-width: 1px;
+      border-style: solid;
+      width: 100%;
+      height: 20%;
+      display: flex;
+      justify-content: center !important;
+      align-items: center !important; }
+      .admin .admin-table .admin-table-bottom .center {
+        text-align: center; }
+      .admin .admin-table .admin-table-bottom .pagination {
+        display: inline-block; }
+      .admin .admin-table .admin-table-bottom .pagination a {
+        color: black;
+        float: left;
+        padding: 8px 16px;
+        text-decoration: none;
+        transition: background-color .3s;
+        border: 1px solid #ddd; }
+      .admin .admin-table .admin-table-bottom .pagination a.active {
+        background-color: #4CAF50;
+        color: white;
+        border: 1px solid #4CAF50; }
+      .admin .admin-table .admin-table-bottom .pagination a:hover {
+        background-color: #ddd; }
+  .admin .admin-detail {
+    border-width: 1px;
+    border-style: solid;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column; }

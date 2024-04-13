@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+a {
+  text-decoration: none !important;
+  color: white; }
+
+.DetailedInfor {
+  border-width: 1px;
+  border-style: solid;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column; }
+  .DetailedInfor .DetailedInfor-header {
+    border-width: 1px;
+    border-style: solid;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column; }
+    .DetailedInfor .DetailedInfor-header .DetailedInfor-header-top {
+      border-width: 1px;
+      border-style: solid;
+      width: 100%;
+      height: 100%;
+      display: flex; }
+    .DetailedInfor .DetailedInfor-header .DetailedInfor-header-bot {
+      border-width: 1px;
+      border-style: solid;
+      width: 100%;
+      height: auto; }
+      .DetailedInfor .DetailedInfor-header .DetailedInfor-header-bot .DetailedInfor-header-bot-header {
+        padding: 0px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        background-color: #282f33;
+        cursor: pointer; }
+        .DetailedInfor .DetailedInfor-header .DetailedInfor-header-bot .DetailedInfor-header-bot-header .DetailedInfor-header-bot-header-login:active {
+          background-color: white; }
+        .DetailedInfor .DetailedInfor-header .DetailedInfor-header-bot .DetailedInfor-header-bot-header .DetailedInfor-header-bot-header-login:hover {
+          opacity: 0.5; }
+        .DetailedInfor .DetailedInfor-header .DetailedInfor-header-bot .DetailedInfor-header-bot-header .DetailedInfor-header-bot-header-menu {
+          display: flex;
+          margin-bottom: 0px;
+          list-style: none; }
+        .DetailedInfor .DetailedInfor-header .DetailedInfor-header-bot .DetailedInfor-header-bot-header .DetailedInfor-header-bot-header-menu > li {
+          padding: 12px 20px;
+          border-right: 1px solid #fff; }
+        .DetailedInfor .DetailedInfor-header .DetailedInfor-header-bot .DetailedInfor-header-bot-header .DetailedInfor-header-bot-header-menu > li:last-child {
+          border: none; }
+        .DetailedInfor .DetailedInfor-header .DetailedInfor-header-bot .DetailedInfor-header-bot-header .DetailedInfor-header-bot-header-menu > li > ul {
+          position: absolute;
+          background-color: #214467;
+          list-style: none;
+          top: 150px;
+          width: 200px;
+          display: none;
+          padding-left: 1px; }
+        .DetailedInfor .DetailedInfor-header .DetailedInfor-header-bot .DetailedInfor-header-bot-header .DetailedInfor-header-bot-header-menu > li > ul > li {
+          padding: 20px;
+          border-bottom: 1px solid #fff; }
+        .DetailedInfor .DetailedInfor-header .DetailedInfor-header-bot .DetailedInfor-header-bot-header .DetailedInfor-header-bot-header-menu > li > ul > li:hover {
+          background-color: yellow; }
+        .DetailedInfor .DetailedInfor-header .DetailedInfor-header-bot .DetailedInfor-header-bot-header .DetailedInfor-header-bot-header-menu > li:hover > ul {
+          display: block; }
+  .DetailedInfor .DetailedInfor-content {
+    border-width: 1px;
+    border-style: solid;
+    width: 100%;
+    height: 2000px;
+    display: flex;
+    padding-left: 8%;
+    padding-right: 8%;
+    background-color: #222d38; }
+    .DetailedInfor .DetailedInfor-content .DetailedInfor-content-left {
+      border-width: 1px;
+      border-style: solid;
+      width: 80%;
+      height: 100%;
+      display: flex; }
+    .DetailedInfor .DetailedInfor-content .DetailedInfor-content-right {
+      border-width: 1px;
+      border-style: solid;
+      width: 20%;
+      height: 100%;
+      display: flex; }
+  .DetailedInfor .DetailedInfor-footer {
+    border-width: 4px;
+    border-style: solid;
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    background-color: #222d38;
+    list-style: none;
+    padding-left: 8%;
+    padding-right: 20%;
+    justify-content: space-between;
+    border-top-color: black; }
+
+@media (max-width: 768px) {
+  .DetailedInfor .DetailedInfor-footer {
+    border-width: 4px;
+    border-style: solid;
+    width: 100%;
+    height: auto;
+    display: flex;
+    background-color: #222d38;
+    list-style: none;
+    padding-left: 8%;
+    padding-right: 20%;
+    justify-content: space-between;
+    border-top-color: black; } }
