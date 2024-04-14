@@ -9,11 +9,14 @@ import Footer from '../Footer/Footer';
 import Elements from '../Elements/Elements';
 import Elements1 from '../Elements1/Elements1';
 
+import ReactPaginate from 'react-paginate';
+
 
 import { useSelector, useDispatch } from 'react-redux';
 import Menu from '../Menu/Menu';
 
 import { useHistory } from 'react-router-dom';
+
 const _ = require('lodash');
 
 
@@ -26,6 +29,23 @@ const Home = () => {
 
     const dispatch = useDispatch()
     const history = useHistory();
+    let [isClick, setisClick] = useState(false)
+    let [pagination, setpagination] = useState([
+        { number: 1 },
+        { number: 2 },
+        { number: 3 },
+        { number: 4 },
+        { number: 5 },
+        { number: 6 },
+        { number: 7 },
+        { number: 8 },
+        { number: 9 },
+        { number: 10 },
+
+    ])
+
+
+
     const latestTopics = [
         {
             title: "Cận cảnh nhà ga T3 Tân Sơn Nhất sau 3 tháng khởi công",
@@ -96,6 +116,10 @@ const Home = () => {
     ]
 
 
+    const handlePageClick = (event) => {
+        console.log('event', event.selected)
+    }
+
 
 
 
@@ -156,18 +180,26 @@ const Home = () => {
                         </div>
                         <div className='Home-content-left-three-pagination'>
 
-                            <div className="center">
-                                <div className="pagination">
-                                    <a >&laquo;</a>
-                                    <a >1</a>
-                                    <a >2</a>
-                                    <a >3</a>
-                                    <a >4</a>
-                                    <a>5</a>
-                                    <a >6</a>
-                                    <a >&raquo;</a>
-                                </div>
-                            </div>
+                            <ReactPaginate
+                                breakLabel="..."
+                                nextLabel="next >"
+                                onPageChange={handlePageClick}
+                                pageRangeDisplayed={10}
+                                pageCount={69}
+                                previousLabel="< previous"
+                                // renderOnZeroPageCount={null}
+
+                                pageClassName='page-item'
+                                pageLinkClassName='page-link'
+                                previousLinkClassName='page-link'
+                                previousClassName='page-item'
+                                nextClassName='page-item'
+                                nextLinkClassName='page-link'
+                                breakClassName='page-item'
+                                breakLinkClassName='page-link'
+                                containerClassName='panination'
+                                activeClassName='active'
+                            />
 
                         </div>
                     </div>

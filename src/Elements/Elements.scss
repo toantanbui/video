@@ -5,6 +5,17 @@
     height: 230px;
     display: flex;
     flex-direction: column;
+    background-image: url('../../images/abc.jpg');
+    background-size: contain;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.5;
+    }
+
+    &:active {
+        background-color: green;
+    }
 
     .Elements-top {
         border-width: 1px;

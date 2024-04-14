@@ -17,6 +17,8 @@ import Infor from './Infor/Infor';
 import Login from './Login/Login';
 import Elements from './Elements/Elements';
 import Elements1 from './Elements1/Elements1';
+import Watch from './Watch/Watch';
+
 
 
 
@@ -39,6 +41,8 @@ const App = () => {
           <Route path={path.LOGIN} component={(Login)} />
           <Route path={path.ELEMENTS} component={(Elements)} />
           <Route path={path.ELEMENTS1} component={(Elements1)} />
+          <Route path={path.WATCH} component={(Watch)} />
+
 
         </Switch>
       </Router>

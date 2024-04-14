@@ -4,7 +4,14 @@
   width: 150px;
   height: 230px;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  background-image: url("../../images/abc.jpg");
+  background-size: contain;
+  cursor: pointer; }
+  .Elements:hover {
+    opacity: 0.5; }
+  .Elements:active {
+    background-color: green; }
   .Elements .Elements-top {
     border-width: 1px;
     border-style: solid;

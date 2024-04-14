@@ -25,6 +25,45 @@ const Admin = () => {
     const dispatch = useDispatch()
     const history = useHistory();
 
+    let [movieName, setmovieName] = useState('')
+    let [parameterName, setparameterName] = useState('')
+    let [duration, setduration] = useState('')
+    let [releaseYear, setreleaseYear] = useState('')
+    let [director, setdirector] = useState('')
+    let [action, setaction] = useState('')
+    let [category, setcategory] = useState('')
+    let [movieLink, setmovieLink] = useState('')
+    let [country, setcountry] = useState('')
+    let [movieContent, setmovieContent] = useState('')
+    let [image, setimage] = useState('')
+
+    let [dataAllVideoAdmin, setdataAllVideoAdmin] = useState([])
+
+    let dataAllVideoRedux = useSelector(state => state.admin.dataAllVideo)
+
+    useEffect(async () => {
+
+        await dispatch(actions.handleGetAllVideo({}))
+
+        if (dataAllVideoRedux !== null) {
+
+            setdataAllVideoAdmin(dataAllVideoRedux)
+
+        }
+
+
+    }, [])
+
+    useEffect(async () => {
+
+        if (dataAllVideoRedux !== null) {
+
+            setdataAllVideoAdmin(dataAllVideoRedux)
+
+        }
+
+
+    }, [dataAllVideoRedux])
 
 
 
@@ -44,30 +83,23 @@ const Admin = () => {
                             <th>Chỉnh sửa</th>
                             <th>Xóa</th>
                         </tr>
-                        <tr>
-                            <td>234123121</td>
-                            <td>Alfreds Futterkiste</td>
-                            <td>Maria Anders</td>
-                            <td>Germany</td>
-                            <td><button type="button" class="btn btn-warning">update</button></td>
-                            <td><button type="button" class="btn btn-danger">delete</button></td>
-                        </tr>
-                        <tr>
-                            <td>234123121</td>
-                            <td>Alfreds Futterkiste</td>
-                            <td>Maria Anders</td>
-                            <td>Germany</td>
-                            <td><button type="button" class="btn btn-warning">update</button></td>
-                            <td><button type="button" class="btn btn-danger">delete</button></td>
-                        </tr>
-                        <tr>
-                            <td>234123121</td>
-                            <td>Alfreds Futterkiste</td>
-                            <td>Maria Anders</td>
-                            <td>Germany</td>
-                            <td><button type="button" class="btn btn-warning">update</button></td>
-                            <td><button type="button" class="btn btn-danger">delete</button></td>
-                        </tr>
+
+                        {dataAllVideoAdmin && dataAllVideoAdmin.length > 0 &&
+                            dataAllVideoAdmin.map((item, index) => {
+                                return (
+                                    <tr key={index}>
+                                        <td>{item._id}</td>
+                                        <td>{item.movieName}</td>
+                                        <td>{item.category}</td>
+                                        <td>{item.country}</td>
+                                        <td><button type="button" class="btn btn-warning">update</button></td>
+                                        <td><button type="button" class="btn btn-danger">delete</button></td>
+                                    </tr>
+                                )
+
+                            })
+
+                        }
 
 
                     </table>

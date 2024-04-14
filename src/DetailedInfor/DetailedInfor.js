@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 import * as actions from '../store/actions';
 import '../assets/css/DetailedInfor/DetailedInfor.css';
 import Footer from '../Footer/Footer';
+import Elements1 from '../Elements1/Elements1';
+
 
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -45,6 +47,55 @@ const DetailedInfor = () => {
         }
     ];
 
+    const movie = [
+        {
+            name: 'Thạch Cảm Đan',
+            time: 'tập 3',
+            en: 'Thuyết minh'
+        },
+        {
+            name: 'An Hùng Xạ Điêu',
+            time: 'tập 4',
+            en: 'Thuyết minh'
+        },
+        {
+            name: 'Tam Quốc Diễn Nghĩa',
+            time: 'tập 5',
+            en: 'Thuyết minh'
+        },
+        {
+            name: 'Thạch Cảm Đan',
+            time: 'tập 3',
+            en: 'Thuyết minh'
+        },
+        {
+            name: 'An Hùng Xạ Điêu',
+            time: 'tập 4',
+            en: 'Thuyết minh'
+        },
+        {
+            name: 'Tam Quốc Diễn Nghĩa',
+            time: 'tập 5',
+            en: 'Thuyết minh'
+        },
+        {
+            name: 'Thạch Cảm Đan',
+            time: 'tập 3',
+            en: 'Thuyết minh'
+        },
+        {
+            name: 'An Hùng Xạ Điêu',
+            time: 'tập 4',
+            en: 'Thuyết minh'
+        },
+        {
+            name: 'Tam Quốc Diễn Nghĩa',
+            time: 'tập 5',
+            en: 'Thuyết minh'
+        },
+
+    ]
+
 
 
 
@@ -62,10 +113,10 @@ const DetailedInfor = () => {
                         <div className='DetailedInfor-content-left-top-image'>
                             <div className='DetailedInfor-content-left-top-image-image'></div>
                             <div className='DetailedInfor-content-left-top-image-watch'>
-                                <span style={{ height: '50px', marginRight: '5px', }}>
+                                <span className='DetailedInfor-content-left-top-image-watch-span' style={{ height: '50px', marginRight: '5px', }}>
                                     <button type="button" class="btn btn-primary">Tập phim</button>
                                 </span>
-                                <span style={{ height: '50px' }}>
+                                <span className='DetailedInfor-content-left-top-image-watch-span' style={{ height: '50px', color: 'white' }}>
                                     <button type="button" class="btn btn-warning">Xem phim</button>
                                 </span>
 
@@ -75,22 +126,21 @@ const DetailedInfor = () => {
                         <div className='DetailedInfor-content-left-top-infor'>
                             <div className='DetailedInfor-content-left-top-infor-title'>Thạch Cảm Đan</div>
                             <div className='DetailedInfor-content-left-top-infor-detail'>
+                                <span className='abcd'>Năm sản xuất:&nbsp; <span style={{ fontFamily: 'fantasy' }}>
+                                    2010</span></span>
+                                <span className='abcd'>Tập phát sóng:&nbsp; <span style={{ fontFamily: 'fantasy' }}>
+                                    tập 3</span></span>
+                                <span className='abcd'>Thời lượng:&nbsp; <span style={{ fontFamily: 'fantasy' }}>
+                                    45 phút</span></span>
+                                <span className='abcd'>Quốc gia:&nbsp; <span style={{ fontFamily: 'fantasy' }}>
+                                    Trung Quốc</span></span>
                                 <span className='abcd'>Đạo diễn:&nbsp; <span style={{ fontFamily: 'fantasy' }}>
                                     Nguyễn Văn A</span></span>
-                                <span className='abcd'>Đạo diễn:&nbsp; <span style={{ fontFamily: 'fantasy' }}>
+                                <span className='abcd'>Diễn viên:&nbsp; <span style={{ fontFamily: 'fantasy' }}>
                                     Nguyễn Văn A</span></span>
-                                <span className='abcd'>Đạo diễn:&nbsp; <span style={{ fontFamily: 'fantasy' }}>
-                                    Nguyễn Văn A</span></span>
-                                <span className='abcd'>Đạo diễn:&nbsp; <span style={{ fontFamily: 'fantasy' }}>
-                                    Nguyễn Văn A</span></span>
-                                <span className='abcd'>Đạo diễn:&nbsp; <span style={{ fontFamily: 'fantasy' }}>
-                                    Nguyễn Văn A</span></span>
-                                <span className='abcd'>Đạo diễn:&nbsp; <span style={{ fontFamily: 'fantasy' }}>
-                                    Nguyễn Văn A</span></span>
-                                <span className='abcd'>Đạo diễn:&nbsp; <span style={{ fontFamily: 'fantasy' }}>
-                                    Nguyễn Văn A</span></span>
-                                <span className='abcd'>Đạo diễn:&nbsp; <span style={{ fontFamily: 'fantasy' }}>
-                                    Nguyễn Văn A</span></span>
+                                <span className='abcd'>Thể loại:&nbsp; <span style={{ fontFamily: 'fantasy' }}>
+                                    Cổ trang</span></span>
+
 
 
 
@@ -108,7 +158,17 @@ const DetailedInfor = () => {
                     </div>
                 </div>
                 <div className='DetailedInfor-content-right'>
-                    <div className='DetailedInfor-content-right-header'></div>
+                    <div className='DetailedInfor-content-right-header'>Mới nhất</div>
+                    <div className='DetailedInfor-content-right-content'>
+                        {
+                            movie.map((item, index) => {
+                                return (<Elements1 name={item.name} time={item.time}
+                                    en={item.en}
+
+                                />)
+                            })
+                        }
+                    </div>
                 </div>
             </div>
             <div className='DetailedInfor-footer'>

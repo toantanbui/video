@@ -6,13 +6,8 @@ const initialState = {
     UsersRedux: [],
     errMessage: '',
     userInfo1: null,
-    errMessagePosts: '',
-    postsInfo: null,
-    allPosts: null,
-    postsInfoById: null,
-    allPostsLike: null,
-    errMessageEditOneUser: '',
-    errMessageCreatePost: ''
+    dataAllVideo: null
+
 
 
 
@@ -35,6 +30,15 @@ const adminReducer = (state = initialState, action) => {
             }
         case actionTypes.USER_SIGNUP_SUCCESS:
             state.errMessage = action.errMessage
+
+            console.log('action', action)
+
+            return {
+                ...state,
+            }
+
+        case actionTypes.GET_ALL_VIDEO:
+            state.dataAllVideo = action.data
 
             console.log('action', action)
 

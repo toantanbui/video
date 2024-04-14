@@ -28,6 +28,11 @@ const Menu = () => {
         history.push(`/login`);
     }
 
+    const handleClickHome = () => {
+
+        history.push(`/`);
+    }
+
 
 
 
@@ -39,7 +44,9 @@ const Menu = () => {
             <div className='Menu-header-bot'>
                 <header className='Menu-header-bot-header'>
                     <ul className='Menu-header-bot-header-menu'>
-                        <li><a href="">Trang chủ</a>
+                        <li><a href=""
+                            onClick={() => { handleClickHome() }}
+                        >Trang chủ</a>
 
                         </li>
                         <li><a href="">Thể loại</a>

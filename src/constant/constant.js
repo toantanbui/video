@@ -6,7 +6,9 @@ export const path = {
     INFOR: '/infor',
     LOGIN: '/login',
     ELEMENTS: '/elements',
-    ELEMENTS1: '/elements1'
+    ELEMENTS1: '/elements1',
+    WATCH: '/watch',
+    PAGINATION: '/pagination'
 
 }
 
