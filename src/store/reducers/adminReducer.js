@@ -6,7 +6,8 @@ const initialState = {
     UsersRedux: [],
     errMessage: '',
     userInfo1: null,
-    dataAllVideo: null
+    dataAllVideo: null,
+    dataOneVideoMythology: null
 
 
 
@@ -39,6 +40,15 @@ const adminReducer = (state = initialState, action) => {
 
         case actionTypes.GET_ALL_VIDEO:
             state.dataAllVideo = action.data
+
+            console.log('action', action)
+
+            return {
+                ...state,
+            }
+
+        case actionTypes.GET_ONE_VIDEO_MYTHOLOGY:
+            state.dataOneVideoMythology = action.data
 
             console.log('action', action)
 

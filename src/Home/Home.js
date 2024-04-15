@@ -29,6 +29,36 @@ const Home = () => {
 
     const dispatch = useDispatch()
     const history = useHistory();
+    let [mythologyHome, setmythologyHome] = useState(null)
+
+    let mythology = useSelector(state => state.admin.dataOneVideoMythology)
+
+    useEffect(async () => {
+
+        await dispatch(actions.handleGetOneVideoByMythology({ category: 'than-thoai' }))
+
+        if (mythology !== null) {
+            setmythologyHome(mythology)
+        }
+
+
+    }, [])
+
+    useEffect(async () => {
+
+
+        if (mythology !== null) {
+            console.log('Gia trị của thần thoại là: ', mythology)
+            setmythologyHome(mythology)
+        }
+
+
+    }, [mythology])
+
+
+
+
+
     let [isClick, setisClick] = useState(false)
     let [pagination, setpagination] = useState([
         { number: 1 },
@@ -121,6 +151,11 @@ const Home = () => {
     }
 
 
+    const handleClickDetailedInfor = (data) => {
+
+        history.push(`/DetailedInfor/${data.id}/${data.parameterName}`);
+    }
+
 
 
     return (
@@ -134,13 +169,15 @@ const Home = () => {
                 <div className='Home-content-left'>
                     <div className='Home-content-left-one'>
                         <div className='Home-content-left-one-header'>
-                            Phim Cổ trang
+                            Phim Thần Thoại
                         </div>
                         <div className='Home-content-left-one-content'>
                             {
-                                movie.map((item, index) => {
-                                    return (<Elements name={item.name} time={item.time}
-                                        en={item.en}
+                                mythologyHome && mythologyHome.map((item, index) => {
+                                    return (<Elements movieName={item.movieName} duration={item.duration}
+                                        parameterName={item.parameterName}
+                                        id={item._id}
+                                        handleClickDetailedInfor={handleClickDetailedInfor}
 
                                     />)
                                 })
@@ -150,7 +187,7 @@ const Home = () => {
                     </div>
                     <div className='Home-content-left-one'>
                         <div className='Home-content-left-one-header'>
-                            Phim hoạt hình
+                            Phim Gia Đình
                         </div>
                         <div className='Home-content-left-one-content'>
                             {

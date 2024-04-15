@@ -2,7 +2,7 @@ export const path = {
     HOME: '/',
     ADMIN: '/admin',
     MENU: '/menu',
-    DETAILEDINFOR: '/DetailedInfor',
+    DETAILEDINFOR: '/DetailedInfor/:parameterName/:id',
     INFOR: '/infor',
     LOGIN: '/login',
     ELEMENTS: '/elements',

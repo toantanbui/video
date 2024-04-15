@@ -1,7 +1,8 @@
 import actionTypes from "./actionTypes";
 
 import {
-    handleCreateVideoAPI, handleGetAllVideoAPI
+    handleCreateVideoAPI, handleGetAllVideoAPI, handleUpdateVideoAPI, handleDeleteVideoAPI,
+    handleGetOneVideoByMythologyAPI
 
 
 } from '../../services/userService'
@@ -21,6 +22,7 @@ export const handleCreateVideo = (data1) => {
 
 
                 })
+                await dispatch(handleGetAllVideo({}))
 
 
             }
@@ -49,6 +51,91 @@ export const handleGetAllVideo = () => {
                 })
 
             }
+
+
+        } catch (e) {
+            console.log(e)
+
+        }
+    }
+}
+
+export const handleUpdateVideo = (data1) => {
+    return async (dispatch, getState) => {
+        try {
+            let res = await handleUpdateVideoAPI(data1);
+
+            if (res && res.errCode === 0) {
+                dispatch({
+                    type: actionTypes.UPDATE_ONE_VIDEO,
+
+                    errMessage: res.errMessage,
+
+
+
+                })
+                await dispatch(handleGetAllVideo({}))
+
+
+
+
+
+            }
+
+
+
+        } catch (e) {
+            console.log(e)
+
+        }
+    }
+}
+
+export const handleDeleteVideo = (data1) => {
+    return async (dispatch, getState) => {
+        try {
+            let res = await handleDeleteVideoAPI(data1);
+
+            if (res && res.errCode === 0) {
+                dispatch({
+                    type: actionTypes.DELETE_ONE_VIDEO,
+
+                    errMessage: res.errMessage,
+
+
+
+                })
+                await dispatch(handleGetAllVideo({}))
+
+
+            }
+
+
+
+        } catch (e) {
+            console.log(e)
+
+        }
+    }
+}
+
+export const handleGetOneVideoByMythology = (data1) => {
+    return async (dispatch, getState) => {
+        try {
+            let res = await handleGetOneVideoByMythologyAPI(data1);
+
+            if (res && res.errCode === 0) {
+                dispatch({
+                    type: actionTypes.GET_ONE_VIDEO_MYTHOLOGY,
+
+                    errMessage: res.errMessage,
+                    data: res.data
+
+
+                })
+
+            }
+
 
 
         } catch (e) {

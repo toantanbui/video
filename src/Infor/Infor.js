@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import CommonUtil from '../CommonUtil/CommonUtil';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
+import { Buffer } from 'buffer';
 
 import * as actions from '../store/actions';
 import '../assets/css/Infor/Infor.css';
@@ -20,12 +21,12 @@ const _ = require('lodash');
 
 
 
-const Infor = () => {
+const Infor = (props) => {
 
 
     const dispatch = useDispatch()
     const history = useHistory();
-
+    let [id, setid] = useState('')
     let [movieName, setmovieName] = useState('')
     let [parameterName, setparameterName] = useState('')
     let [duration, setduration] = useState('')
@@ -37,9 +38,51 @@ const Infor = () => {
     let [country, setcountry] = useState('')
     let [movieContent, setmovieContent] = useState('')
     let [image, setimage] = useState('')
+    let [actionHandle, setactionHandle] = useState('CREATE')
 
 
     let [isOpenpreviewImage, setisOpenpreviewImage] = useState(false)
+
+
+    useEffect(async () => {
+
+        if (props.item !== null) {
+            console.log('giá trị của item la ', props.item)
+            setmovieName(props.item.movieName)
+            setparameterName(props.item.parameterName)
+            setduration(props.item.duration)
+            setreleaseYear(props.item.releaseYear)
+            setdirector(props.item.director)
+            setaction(props.item.action)
+            setcategory(props.item.category)
+            setmovieLink(props.item.movieLink)
+            setcountry(props.item.country)
+            setmovieContent(props.item.movieContent)
+            setid(props.item._id)
+
+
+            let imageBase64 = '';
+
+            if (props.item.image) {
+
+                imageBase64 = new Buffer(props.item.image, 'base64').toString('binary')
+
+                if (imageBase64) {
+
+
+                    setimage(imageBase64)
+
+                }
+            }
+
+            setactionHandle('UPDATE')
+
+
+        }
+
+
+    }, [props.item])
+
 
 
     const onChangeInputMovieName = (event) => {
@@ -136,21 +179,45 @@ const Infor = () => {
 
     }
 
-    const handleCreateVideo = () => {
-        dispatch(actions.handleCreateVideo({
-            movieName: movieName,
-            parameterName: parameterName,
-            duration: duration,
-            releaseYear: releaseYear,
-            director: director,
-            action: action,
-            category: category,
-            movieLink: movieLink,
-            country: country,
-            movieContent: movieContent,
-            image: image
+    const handleCreateOrUpdateVideo = () => {
 
-        }))
+        if (actionHandle === 'CREATE') {
+            dispatch(actions.handleCreateVideo({
+                movieName: movieName,
+                parameterName: parameterName,
+                duration: duration,
+                releaseYear: releaseYear,
+                director: director,
+                action: action,
+                category: category,
+                movieLink: movieLink,
+                country: country,
+                movieContent: movieContent,
+                image: image
+
+            }))
+        } else {
+            dispatch(actions.handleUpdateVideo({
+                id: id,
+                movieName: movieName,
+                parameterName: parameterName,
+                duration: duration,
+                releaseYear: releaseYear,
+                director: director,
+                action: action,
+                category: category,
+                movieLink: movieLink,
+                country: country,
+                movieContent: movieContent,
+                image: image
+
+            }))
+
+            setactionHandle('CREATE')
+
+
+        }
+
         setmovieName('')
         setparameterName('')
         setduration('')
@@ -327,8 +394,8 @@ const Infor = () => {
                 <br />
                 <div className="row">
                     <button type="button" class="btn btn-secondary"
-                        onClick={() => { handleCreateVideo() }}
-                    >Create</button>
+                        onClick={() => { handleCreateOrUpdateVideo() }}
+                    >{actionHandle === 'CREATE' ? 'Create' : 'Update'}</button>
                 </div>
             </form >
         </div >

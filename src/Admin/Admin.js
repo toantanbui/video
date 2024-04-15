@@ -25,17 +25,17 @@ const Admin = () => {
     const dispatch = useDispatch()
     const history = useHistory();
 
-    let [movieName, setmovieName] = useState('')
-    let [parameterName, setparameterName] = useState('')
-    let [duration, setduration] = useState('')
-    let [releaseYear, setreleaseYear] = useState('')
-    let [director, setdirector] = useState('')
-    let [action, setaction] = useState('')
-    let [category, setcategory] = useState('')
-    let [movieLink, setmovieLink] = useState('')
-    let [country, setcountry] = useState('')
-    let [movieContent, setmovieContent] = useState('')
-    let [image, setimage] = useState('')
+    // let [movieName, setmovieName] = useState('')
+    // let [parameterName, setparameterName] = useState('')
+    // let [duration, setduration] = useState('')
+    // let [releaseYear, setreleaseYear] = useState('')
+    // let [director, setdirector] = useState('')
+    // let [action, setaction] = useState('')
+    // let [category, setcategory] = useState('')
+    // let [movieLink, setmovieLink] = useState('')
+    // let [country, setcountry] = useState('')
+    // let [movieContent, setmovieContent] = useState('')
+    let [inforOneVideo, setinforOneVideo] = useState(null)
 
     let [dataAllVideoAdmin, setdataAllVideoAdmin] = useState([])
 
@@ -65,6 +65,18 @@ const Admin = () => {
 
     }, [dataAllVideoRedux])
 
+    const handleUpdateOneVideo = (item) => {
+        setinforOneVideo(item)
+    }
+
+    const handleDeleteOneVideo = (idVideo) => {
+        console.log('id video truyền vào là: ', idVideo)
+        dispatch(actions.handleDeleteVideo({
+            id: idVideo
+
+        }))
+    }
+
 
 
 
@@ -92,8 +104,12 @@ const Admin = () => {
                                         <td>{item.movieName}</td>
                                         <td>{item.category}</td>
                                         <td>{item.country}</td>
-                                        <td><button type="button" class="btn btn-warning">update</button></td>
-                                        <td><button type="button" class="btn btn-danger">delete</button></td>
+                                        <td><button type="button" class="btn btn-warning"
+                                            onClick={() => { handleUpdateOneVideo(item) }}
+                                        >update</button></td>
+                                        <td><button type="button" class="btn btn-danger"
+                                            onClick={() => { handleDeleteOneVideo(item._id) }}
+                                        >delete</button></td>
                                     </tr>
                                 )
 
@@ -123,7 +139,7 @@ const Admin = () => {
 
             </div>
             <div className='admin-detail'>
-                <Infor />
+                <Infor item={inforOneVideo} />
             </div>
 
         </div>

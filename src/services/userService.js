@@ -13,6 +13,19 @@ const handleGetAllVideoAPI = () => {
     return axios.get('/api/get-all-video')
 }
 
+const handleUpdateVideoAPI = (data) => {
+    return axios.post('/api/update-one-video', data)
+}
+
+const handleDeleteVideoAPI = (data) => {
+    return axios.post('/api/delete-one-video', data)
+}
+
+const handleGetOneVideoByMythologyAPI = (data) => {
+    return axios.post('/api/get-one-video-by-than-thoai', data)
+}
+
+
 
 
 
@@ -22,7 +35,8 @@ const handleGetAllVideoAPI = () => {
 
 
 export {
-    handleCreateVideoAPI, handleGetAllVideoAPI
+    handleCreateVideoAPI, handleGetAllVideoAPI, handleUpdateVideoAPI, handleDeleteVideoAPI,
+    handleGetOneVideoByMythologyAPI
 
 
 }
