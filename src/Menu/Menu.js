@@ -33,14 +33,45 @@ const Menu = () => {
         history.push(`/`);
     }
 
+    let [key, setkey] = useState('')
 
 
+    const onChangeInputKey = (event) => {
+        let event1 = event.target.value;
+        console.log('Gia trị là ', event)
+
+
+        setkey(event1)
+
+    }
+
+
+    const handleSearchKey = async () => {
+        await dispatch(actions.handleSearchKey({
+            text: key
+
+        }))
+        history.push(`/searchkey`);
+    }
 
 
 
     return (
         <div className='Menu-header'>
-            <div className='Menu-header-top'></div>
+            <div className='Menu-header-top'>
+                <div className='Menu-header-top-title'>PhimHay.xyz</div>
+                <div className='Menu-header-top-search'>
+                    <input className='Menu-header-top-search-search' type='text' placeholder='tìm kiếm'
+                        onChange={(event) => onChangeInputKey(event)}
+                    />
+                    <div
+                        onClick={() => { handleSearchKey() }}
+                    > <i className="fas fa-search search-icon" style={{ cursor: 'pointer' }}
+
+                    ></i></div>
+
+                </div>
+            </div>
             <div className='Menu-header-bot'>
                 <header className='Menu-header-bot-header'>
                     <ul className='Menu-header-bot-header-menu'>

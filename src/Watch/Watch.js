@@ -22,11 +22,79 @@ const _ = require('lodash');
 
 
 
-const Watch = () => {
+const Watch = (props) => {
 
 
     const dispatch = useDispatch()
     const history = useHistory();
+    let [movieName, setmovieName] = useState('')
+    let [parameterName, setparameterName] = useState('')
+    let [duration, setduration] = useState('')
+    let [releaseYear, setreleaseYear] = useState('')
+    let [director, setdirector] = useState('')
+    let [action, setaction] = useState('')
+    let [category, setcategory] = useState('')
+    let [movieLink, setmovieLink] = useState('')
+    let [country, setcountry] = useState('')
+    let [movieContent, setmovieContent] = useState('')
+    let [image, setimage] = useState('')
+    let [allVideoByTime, setallVideoByTime] = useState(null)
+
+    let dataOneVideoIdRedux = useSelector(state => state.admin.dataOneVideoId)
+    let dataAllVideoByTimeRedux = useSelector(state => state.admin.dataAllVideoByTime)
+
+
+    useEffect(async () => {
+
+
+        await dispatch(actions.handleGetOneVideoById({ id: props.match.params.id }))
+        console.log('giá trị video componentDidmount', dataOneVideoIdRedux)
+        // if (dataOneVideoIdRedux !== null) {
+
+        //     setinforOneVideo(dataOneVideoIdRedux)
+        //     console.log('giá trị video componentDidmount', dataOneVideoIdRedux)
+
+
+        // }
+        console.log('giá trị tham số', props.match.params.id)
+        if (dataAllVideoByTimeRedux !== null) {
+            setallVideoByTime(dataAllVideoByTimeRedux)
+        }
+
+
+
+    }, [])
+    useEffect(async () => {
+
+
+
+        if (dataOneVideoIdRedux !== null) {
+
+
+            console.log('giá trị video update', dataOneVideoIdRedux)
+
+            setmovieName(dataOneVideoIdRedux[0].movieName);
+            setparameterName(dataOneVideoIdRedux[0].parameterName)
+            setduration(dataOneVideoIdRedux[0].duration)
+            setreleaseYear(dataOneVideoIdRedux[0].releaseYear)
+
+            setmovieLink(dataOneVideoIdRedux[0].movieLink)
+
+            setmovieContent(dataOneVideoIdRedux[0].movieContent)
+
+
+
+
+        }
+        if (dataAllVideoByTimeRedux !== null) {
+            setallVideoByTime(dataAllVideoByTimeRedux)
+        }
+
+
+
+    }, [dataOneVideoIdRedux, dataAllVideoByTimeRedux])
+
+
 
 
     const movie = [
@@ -81,6 +149,13 @@ const Watch = () => {
 
     }
 
+    const handleClickDetailedInfor = (data) => {
+
+        history.push(`/DetailedInfor/${data.id}/${data.parameterName}`);
+    }
+
+
+
 
 
 
@@ -96,7 +171,7 @@ const Watch = () => {
                     <div className='Watch-content-left-content'>
                         <iframe
 
-                            src='https://drive.google.com/file/d/1hdngyjpbqVkczFh-Y_nfuQSAj6x2axeP/preview'
+                            src={movieLink}
                             frameborder="0"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
@@ -107,7 +182,7 @@ const Watch = () => {
                         ></iframe>
                     </div>
                     <div className='Watch-content-left-title'>
-                        Thạch Cảm Đan
+                        {movieName}
                     </div>
                     <div className='Watch-content-left-time'>
                         <ReactPaginate
@@ -139,10 +214,11 @@ const Watch = () => {
                     <div className='Watch-content-right-header'>Mới nhất</div>
                     <div className='Watch-content-right-content'>
                         {
-                            movie.map((item, index) => {
-                                return (<Elements1 name={item.name} time={item.time}
-                                    en={item.en}
-
+                            allVideoByTime && allVideoByTime.map((item, index) => {
+                                return (<Elements1 movieName={item.movieName} duration={item.duration}
+                                    parameterName={item.parameterName}
+                                    id={item._id}
+                                    handleClickDetailedInfor={handleClickDetailedInfor}
                                 />)
                             })
                         }
@@ -151,6 +227,9 @@ const Watch = () => {
             </div>
             <div className='Watch-footer'>
                 <Footer />
+            </div>
+            <div className='Footer-end'>
+                <p>Copyright © 2024</p>
             </div>
 
         </div >

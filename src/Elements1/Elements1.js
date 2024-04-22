@@ -14,13 +14,20 @@ const Elements1 = (props) => {
     const dispatch = useDispatch()
     const history = useHistory();
 
+    const handleClick = () => {
+        props.handleClickDetailedInfor(props)
+
+    }
+
 
     return (
-        <div className='Elements1'>
+        <div className='Elements1'
+            onClick={() => { handleClick() }}
+        >
             <div className='Elements1-image'></div>
             <div className='Elements1-infor'>
-                <span className='Elements1-infor-name'>{props.name}</span>
-                <span className='Elements1-infor-time'>{props.time}</span>
+                <span className='Elements1-infor-name'>{props.movieName}</span>
+                <span className='Elements1-infor-time'>{props.duration}</span>
             </div>
 
         </div>

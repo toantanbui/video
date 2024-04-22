@@ -10,7 +10,28 @@
     border-style: solid;
     width: 100%;
     height: 100%;
-    display: flex; }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px; }
+    .Menu-header .Menu-header-top .Menu-header-top-title {
+      border-width: 1px;
+      border-style: solid;
+      width: auto;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      font-size: 30px;
+      font-family: fangsong;
+      color: red; }
+    .Menu-header .Menu-header-top .Menu-header-top-search {
+      border-width: 1px;
+      border-style: solid;
+      width: 300px;
+      height: 50px;
+      display: flex;
+      align-items: center; }
   .Menu-header .Menu-header-bot {
     border-width: 1px;
     border-style: solid;
@@ -41,7 +62,7 @@
         position: absolute;
         background-color: #214467;
         list-style: none;
-        top: 200px;
+        top: 190px;
         width: 200px;
         display: none;
         padding-left: 1px; }

@@ -30,16 +30,30 @@ const Home = () => {
     const dispatch = useDispatch()
     const history = useHistory();
     let [mythologyHome, setmythologyHome] = useState(null)
+    let [allVideo, setallVideo] = useState(null)
+    let [familyHome, setfamilyHome] = useState(null)
+    let [allVideoByTime, setallVideoByTime] = useState(null)
 
     let mythology = useSelector(state => state.admin.dataOneVideoMythology)
+    let dataAllVideoRedux = useSelector(state => state.admin.dataAllVideo)
+    let family = useSelector(state => state.admin.dataOneVideoFamily)
+    let dataAllVideoByTimeRedux = useSelector(state => state.admin.dataAllVideoByTime)
 
     useEffect(async () => {
 
-        await dispatch(actions.handleGetOneVideoByMythology({ category: 'than-thoai' }))
+        await dispatch(actions.handleGetOneVideoByMythology({ a1: 'than-thoai', a2: 'gia-dinh' }))
 
         if (mythology !== null) {
             setmythologyHome(mythology)
+            setallVideo(dataAllVideoRedux)
         }
+        if (family !== null) {
+            setfamilyHome(family)
+        }
+        if (dataAllVideoByTimeRedux !== null) {
+            setallVideoByTime(dataAllVideoByTimeRedux)
+        }
+
 
 
     }, [])
@@ -50,10 +64,17 @@ const Home = () => {
         if (mythology !== null) {
             console.log('Gia trị của thần thoại là: ', mythology)
             setmythologyHome(mythology)
+            setallVideo(dataAllVideoRedux)
+        }
+        if (family !== null) {
+            setfamilyHome(family)
+        }
+        if (dataAllVideoByTimeRedux !== null) {
+            setallVideoByTime(dataAllVideoByTimeRedux)
         }
 
 
-    }, [mythology])
+    }, [mythology, dataAllVideoRedux, family, dataAllVideoByTimeRedux])
 
 
 
@@ -191,9 +212,11 @@ const Home = () => {
                         </div>
                         <div className='Home-content-left-one-content'>
                             {
-                                movie.map((item, index) => {
-                                    return (<Elements name={item.name} time={item.time}
-                                        en={item.en}
+                                familyHome && familyHome.map((item, index) => {
+                                    return (<Elements movieName={item.movieName} duration={item.duration}
+                                        parameterName={item.parameterName}
+                                        id={item._id}
+                                        handleClickDetailedInfor={handleClickDetailedInfor}
 
                                     />)
                                 })
@@ -207,9 +230,11 @@ const Home = () => {
                         </div>
                         <div className='Home-content-left-three-content'>
                             {
-                                movie.map((item, index) => {
-                                    return (<Elements name={item.name} time={item.time}
-                                        en={item.en}
+                                allVideo && allVideo.map((item, index) => {
+                                    return (<Elements movieName={item.movieName} duration={item.duration}
+                                        parameterName={item.parameterName}
+                                        id={item._id}
+                                        handleClickDetailedInfor={handleClickDetailedInfor}
 
                                     />)
                                 })
@@ -245,11 +270,13 @@ const Home = () => {
                 <div className='Home-content-right'>
                     <div className='Home-content-right-header'>Mới nhất</div>
                     <div className='Home-content-right-content'>
+                        {console.log('gia trị mới nhất', allVideoByTime)}
                         {
-                            movie.map((item, index) => {
-                                return (<Elements1 name={item.name} time={item.time}
-                                    en={item.en}
-
+                            allVideoByTime && allVideoByTime.map((item, index) => {
+                                return (<Elements1 movieName={item.movieName} duration={item.duration}
+                                    parameterName={item.parameterName}
+                                    id={item._id}
+                                    handleClickDetailedInfor={handleClickDetailedInfor}
                                 />)
                             })
                         }
@@ -259,6 +286,9 @@ const Home = () => {
             </div>
             <div className='Home-footer'>
                 <Footer />
+            </div>
+            <div className='Footer-end'>
+                <p>Copyright © 2024</p>
             </div>
 
         </div >

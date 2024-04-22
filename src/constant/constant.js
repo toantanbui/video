@@ -2,13 +2,14 @@ export const path = {
     HOME: '/',
     ADMIN: '/admin',
     MENU: '/menu',
-    DETAILEDINFOR: '/DetailedInfor/:parameterName/:id',
+    DETAILEDINFOR: '/DetailedInfor/:id/:parameterName',
     INFOR: '/infor',
     LOGIN: '/login',
     ELEMENTS: '/elements',
     ELEMENTS1: '/elements1',
-    WATCH: '/watch',
-    PAGINATION: '/pagination'
+    WATCH: '/watch/:id/:parameterName',
+    PAGINATION: '/pagination',
+    SEARCHKEY: '/searchkey'
 
 }
 

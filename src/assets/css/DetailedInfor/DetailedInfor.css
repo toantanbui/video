@@ -147,6 +147,17 @@ a {
     padding-right: 20%;
     justify-content: space-between;
     border-top-color: black; }
+  .DetailedInfor .Footer-end {
+    border-width: 1px;
+    border-style: solid;
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    background-color: #0e1215;
+    justify-content: flex-end;
+    align-items: center;
+    color: white;
+    padding-right: 20px; }
 
 @media (max-width: 768px) {
   .DetailedInfor .DetailedInfor-footer {

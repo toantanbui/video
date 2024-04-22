@@ -77,13 +77,36 @@ const Admin = () => {
         }))
     }
 
+    const handleLogout = () => {
+
+        dispatch(actions.handleLogout())
+
+
+    }
 
 
 
 
     return (
         <div className='admin'>
-            <div className='admin-menu'></div>
+            <div className='admin-menu'>
+                <div className='admin-menu-top'>
+                    <div className='admin-menu-top-title'>
+                        Wellcom, Admin
+                    </div>
+                    <div className='admin-menu-top-search'>
+                        <input className='admin-menu-top-search-input' type='text' placeholder='tìm kiếm' />
+                        <i className="fas fa-search search-icon" style={{ cursor: 'pointer' }}></i>
+
+
+                    </div>
+                </div>
+                <div className='admin-menu-bottom'>
+                    <button type="button" class="btn btn-primary"
+                        onClick={() => handleLogout()}
+                    >Đăng xuất</button>
+                </div>
+            </div>
             <div className='admin-table'>
                 <div className='admin-table-top'>
                     <table>

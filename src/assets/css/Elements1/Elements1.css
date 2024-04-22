@@ -4,7 +4,12 @@
   width: 290px;
   height: 150px;
   display: flex;
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+  cursor: pointer; }
+  .Elements1:hover {
+    opacity: 0.5; }
+  .Elements1:active {
+    background-color: green; }
   .Elements1 .Elements1-image {
     border-width: 1px;
     border-style: solid;

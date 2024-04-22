@@ -36,6 +36,10 @@ const Login = (props) => {
             email: email,
             password: password
         }))
+
+        setemail('')
+        setpassword('')
+        history.push(`/admin`);
     }
 
     let errMessage = useSelector(state => state.user.errMessage)
@@ -62,15 +66,26 @@ const Login = (props) => {
 
                 <div className="container">
                     <label ><b>Username</b></label>
-                    <input type="text" placeholder="Enter Username" />
+                    <input type="text" placeholder="Enter Username"
+                        onChange={(event) => onChangeInputEmail(event)}
+                    />
 
                     <label ><b>Password</b></label>
-                    <input type="password" placeholder="Enter Password" />
+                    <input type="password" placeholder="Enter Password"
+                        onChange={(event) => onChangeInputPasword(event)}
+                    />
 
+                    <span style={{
+                        height: '50px', width: '50px', padding: '10px', marginRight: '10px', backgroundColor: 'red', cursor: 'pointer'
 
-                    <button className='abc'>Login</button>
+                    }}
+                        onClick={() => handleLogin1()}
+                    >Login</span>
+                    {/* <button className='abc'
+                        onClick={() => handleLogin1()}
+                    >Login</button> */}
                     <label>
-                        Remember me
+                        {errMessage}
                     </label>
                 </div>
 
@@ -80,8 +95,8 @@ const Login = (props) => {
                     >Back Home</button>
 
                 </div>
-            </form>
-        </div>
+            </form >
+        </div >
     );
 }
 

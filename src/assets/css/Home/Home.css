@@ -71,7 +71,7 @@ a {
     border-width: 1px;
     border-style: solid;
     width: 100%;
-    height: auto;
+    min-height: 500px;
     display: flex;
     padding-left: 8%;
     padding-right: 8%; }
@@ -177,6 +177,17 @@ a {
     padding-right: 20%;
     justify-content: space-between;
     border-top-color: black; }
+  .Home .Footer-end {
+    border-width: 1px;
+    border-style: solid;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    background-color: #0e1215;
+    justify-content: flex-end;
+    align-items: center;
+    color: white;
+    padding-right: 20px; }
 
 @media (max-width: 768px) {
   .Home .Home-footer {

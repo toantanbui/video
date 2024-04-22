@@ -7,7 +7,11 @@ const initialState = {
     errMessage: '',
     userInfo1: null,
     dataAllVideo: null,
-    dataOneVideoMythology: null
+    dataOneVideoMythology: null,
+    dataOneVideoFamily: null,
+    dataOneVideoId: null,
+    dataAllVideoByTime: null,
+    dataSearchKey: null
 
 
 
@@ -51,6 +55,39 @@ const adminReducer = (state = initialState, action) => {
             state.dataOneVideoMythology = action.data
 
             console.log('action', action)
+
+            return {
+                ...state,
+            }
+        case actionTypes.GET_ONE_VIDEO_FAMILY:
+            state.dataOneVideoFamily = action.data
+
+            console.log('action', action)
+
+            return {
+                ...state,
+            }
+
+        case actionTypes.GET_ONE_VIDEO_ID:
+            state.dataOneVideoId = action.data
+
+            console.log('action', action)
+
+            return {
+                ...state,
+            }
+        case actionTypes.GET_ALL_VIDEO_BY_TIME:
+            state.dataAllVideoByTime = action.data
+
+            console.log('action giá trị mới nhất', action.data)
+
+            return {
+                ...state,
+            }
+        case actionTypes.SEARCH_KEY:
+            state.dataSearchKey = action.data
+
+            console.log('action giá trị key', action.data)
 
             return {
                 ...state,

@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+a {
+  text-decoration: none !important;
+  color: white; }
+
+.SearchKey {
+  border-width: 1px;
+  border-style: solid;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column; }
+  .SearchKey .SearchKey-header {
+    border-width: 1px;
+    border-style: solid;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column; }
+    .SearchKey .SearchKey-header .SearchKey-header-top {
+      border-width: 1px;
+      border-style: solid;
+      width: 100%;
+      height: 100%;
+      display: flex; }
+    .SearchKey .SearchKey-header .SearchKey-header-bot {
+      border-width: 1px;
+      border-style: solid;
+      width: 100%;
+      height: auto; }
+      .SearchKey .SearchKey-header .SearchKey-header-bot .SearchKey-header-bot-header {
+        padding: 0px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        background-color: #282f33;
+        cursor: pointer; }
+        .SearchKey .SearchKey-header .SearchKey-header-bot .SearchKey-header-bot-header .SearchKey-header-bot-header-login:active {
+          background-color: white; }
+        .SearchKey .SearchKey-header .SearchKey-header-bot .SearchKey-header-bot-header .SearchKey-header-bot-header-login:hover {
+          opacity: 0.5; }
+        .SearchKey .SearchKey-header .SearchKey-header-bot .SearchKey-header-bot-header .SearchKey-header-bot-header-menu {
+          display: flex;
+          margin-bottom: 0px;
+          list-style: none; }
+        .SearchKey .SearchKey-header .SearchKey-header-bot .SearchKey-header-bot-header .SearchKey-header-bot-header-menu > li {
+          padding: 12px 20px;
+          border-right: 1px solid #fff; }
+        .SearchKey .SearchKey-header .SearchKey-header-bot .SearchKey-header-bot-header .SearchKey-header-bot-header-menu > li:last-child {
+          border: none; }
+        .SearchKey .SearchKey-header .SearchKey-header-bot .SearchKey-header-bot-header .SearchKey-header-bot-header-menu > li > ul {
+          position: absolute;
+          background-color: #214467;
+          list-style: none;
+          top: 150px;
+          width: 200px;
+          display: none;
+          padding-left: 1px; }
+        .SearchKey .SearchKey-header .SearchKey-header-bot .SearchKey-header-bot-header .SearchKey-header-bot-header-menu > li > ul > li {
+          padding: 20px;
+          border-bottom: 1px solid #fff; }
+        .SearchKey .SearchKey-header .SearchKey-header-bot .SearchKey-header-bot-header .SearchKey-header-bot-header-menu > li > ul > li:hover {
+          background-color: yellow; }
+        .SearchKey .SearchKey-header .SearchKey-header-bot .SearchKey-header-bot-header .SearchKey-header-bot-header-menu > li:hover > ul {
+          display: block; }
+  .SearchKey .SearchKey-content {
+    border-width: 1px;
+    border-style: solid;
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    padding-left: 8%;
+    padding-right: 8%;
+    flex-direction: column; }
+    .SearchKey .SearchKey-content .SearchKey-content-top {
+      border-width: 1px;
+      border-style: solid;
+      width: 100%;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      font-size: 40px;
+      color: red; }
+    .SearchKey .SearchKey-content .SearchKey-content-bottom {
+      border-width: 1px;
+      border-style: solid;
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-wrap: wrap; }
+  .SearchKey .SearchKey-footer {
+    border-width: 4px;
+    border-style: solid;
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    background-color: #222d38;
+    list-style: none;
+    padding-left: 8%;
+    padding-right: 20%;
+    justify-content: space-between;
+    border-top-color: black; }
+  .SearchKey .Footer-end {
+    border-width: 1px;
+    border-style: solid;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    background-color: #0e1215;
+    justify-content: flex-end;
+    align-items: center;
+    color: white;
+    padding-right: 20px; }

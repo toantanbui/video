@@ -2,7 +2,8 @@ import actionTypes from "./actionTypes";
 
 import {
     handleCreateVideoAPI, handleGetAllVideoAPI, handleUpdateVideoAPI, handleDeleteVideoAPI,
-    handleGetOneVideoByMythologyAPI
+    handleGetOneVideoByMythologyAPI, handleGetOneVideoByIdAPI, handleGetOneVideoByFamilyAPI,
+    handleGetDataLogin, handleGetDataLogout, handleGetAllVideoByTimeAPI, handleSearchKeyAPI
 
 
 } from '../../services/userService'
@@ -44,6 +45,30 @@ export const handleGetAllVideo = () => {
             if (res && res.errCode === 0) {
                 dispatch({
                     type: actionTypes.GET_ALL_VIDEO,
+                    errMessage: res.errMessage,
+                    data: res.data
+
+
+                })
+
+            }
+
+
+        } catch (e) {
+            console.log(e)
+
+        }
+    }
+}
+
+export const handleGetAllVideoByTime = () => {
+    return async (dispatch, getState) => {
+        try {
+            let res = await handleGetAllVideoByTimeAPI();
+
+            if (res && res.errCode === 0) {
+                dispatch({
+                    type: actionTypes.GET_ALL_VIDEO_BY_TIME,
                     errMessage: res.errMessage,
                     data: res.data
 
@@ -122,7 +147,7 @@ export const handleDeleteVideo = (data1) => {
 export const handleGetOneVideoByMythology = (data1) => {
     return async (dispatch, getState) => {
         try {
-            let res = await handleGetOneVideoByMythologyAPI(data1);
+            let res = await handleGetOneVideoByMythologyAPI({ category: data1.a1 });
 
             if (res && res.errCode === 0) {
                 dispatch({
@@ -133,6 +158,10 @@ export const handleGetOneVideoByMythology = (data1) => {
 
 
                 })
+                await dispatch(handleGetOneVideoByFamily({ category: data1.a2 }))
+                await dispatch(handleGetAllVideo({}))
+                await dispatch(handleGetAllVideoByTime({}))
+
 
             }
 
@@ -145,37 +174,146 @@ export const handleGetOneVideoByMythology = (data1) => {
     }
 }
 
+export const handleGetOneVideoByFamily = (data1) => {
+    return async (dispatch, getState) => {
+        try {
+            let res = await handleGetOneVideoByFamilyAPI(data1);
+
+            if (res && res.errCode === 0) {
+                dispatch({
+                    type: actionTypes.GET_ONE_VIDEO_FAMILY,
+
+                    errMessage: res.errMessage,
+                    data: res.data
 
 
-// export const handleLogin = (data1) => {
-//     return async (dispatch, getState) => {
-//         try {
-//             let res = await handleGetDataLogin(data1);
+                })
 
-//             if (res && res.errCode === 0) {
-//                 dispatch({
-//                     type: actionTypes.USER_LOGIN_SUCCESS,
-//                     data: res.data,
-//                     errMessage: res.errMessage,
-//                     token: res.token1
 
-//                 })
-
-//             } else {
-//                 dispatch({
-//                     type: actionTypes.USER_LOGIN_FAIL,
-//                     data: res.errMessage
-//                 })
-//             }
+            }
 
 
 
-//         } catch (e) {
-//             console.log(e)
+        } catch (e) {
+            console.log(e)
 
-//         }
-//     }
-// }
+        }
+    }
+}
+
+export const handleGetOneVideoById = (data1) => {
+    return async (dispatch, getState) => {
+        try {
+            let res = await handleGetOneVideoByIdAPI(data1);
+
+            if (res && res.errCode === 0) {
+                dispatch({
+                    type: actionTypes.GET_ONE_VIDEO_ID,
+
+                    errMessage: res.errMessage,
+                    data: res.data
 
 
+                })
+
+            }
+            await dispatch(handleGetAllVideoByTime({}))
+
+
+
+        } catch (e) {
+            console.log(e)
+
+        }
+    }
+}
+
+
+
+export const handleLogin = (data1) => {
+    return async (dispatch, getState) => {
+        try {
+            let res = await handleGetDataLogin(data1);
+
+            if (res && res.errCode === 0) {
+                dispatch({
+                    type: actionTypes.USER_LOGIN_SUCCESS,
+                    data: res.data,
+                    errMessage: res.errMessage,
+                    token: res.token1
+
+                })
+
+            } else {
+                dispatch({
+                    type: actionTypes.USER_LOGIN_FAIL,
+                    data: res.errMessage
+                })
+            }
+
+
+
+        } catch (e) {
+            console.log(e)
+
+        }
+    }
+}
+
+export const handleLogout = () => {
+    return async (dispatch, getState) => {
+        try {
+            let res = await handleGetDataLogout();
+
+
+            dispatch({
+                type: actionTypes.USER_LOGOUT,
+
+            })
+
+
+
+
+
+        } catch (e) {
+            console.log(e)
+
+        }
+    }
+}
+
+export const handleSearchKey = (data1) => {
+    return async (dispatch, getState) => {
+        try {
+            let res = await handleSearchKeyAPI(data1);
+
+            if (res && res.errCode === 0) {
+                dispatch({
+                    type: actionTypes.SEARCH_KEY,
+
+                    errMessage: res.errMessage,
+                    data: res.data
+
+
+                })
+
+            } if (res && res.errCode === 3) {
+                dispatch({
+                    type: actionTypes.SEARCH_KEY,
+
+                    errMessage: res.errMessage,
+                    data: null
+
+
+                })
+
+            }
+
+
+        } catch (e) {
+            console.log(e)
+
+        }
+    }
+}
 

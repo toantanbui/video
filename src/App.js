@@ -18,8 +18,9 @@ import Login from './Login/Login';
 import Elements from './Elements/Elements';
 import Elements1 from './Elements1/Elements1';
 import Watch from './Watch/Watch';
+import SearchKey from './SearchKey/SearchKey';
 
-
+import { userIsAuthenticated, userIsNotAuthenticated } from './authentication/authentication'
 
 
 
@@ -34,14 +35,15 @@ const App = () => {
 
           <Route path={path.HOME} exact component={(Home)} />
 
-          <Route path={path.ADMIN} component={(Admin)} />
+          <Route path={path.ADMIN} component={userIsAuthenticated(Admin)} />
           <Route path={path.MENU} component={(Menu)} />
           <Route path={path.DETAILEDINFOR} component={(DetailedInfor)} />
           <Route path={path.INFOR} component={(Infor)} />
-          <Route path={path.LOGIN} component={(Login)} />
+          <Route path={path.LOGIN} component={userIsNotAuthenticated(Login)} />
           <Route path={path.ELEMENTS} component={(Elements)} />
           <Route path={path.ELEMENTS1} component={(Elements1)} />
           <Route path={path.WATCH} component={(Watch)} />
+          <Route path={path.SEARCHKEY} component={(SearchKey)} />
 
 
         </Switch>
