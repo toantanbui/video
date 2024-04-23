@@ -14,7 +14,8 @@
     justify-content: space-between;
     align-items: center;
     padding-left: 20px;
-    padding-right: 20px; }
+    padding-right: 20px;
+    background-color: #1c1c1c; }
     .Menu-header .Menu-header-top .Menu-header-top-title {
       border-width: 1px;
       border-style: solid;
@@ -24,14 +25,18 @@
       align-items: center;
       font-size: 30px;
       font-family: fangsong;
-      color: red; }
+      color: white;
+      cursor: pointer; }
+      .Menu-header .Menu-header-top .Menu-header-top-title:active {
+        background-color: white; }
     .Menu-header .Menu-header-top .Menu-header-top-search {
       border-width: 1px;
       border-style: solid;
       width: 300px;
       height: 50px;
       display: flex;
-      align-items: center; }
+      align-items: center;
+      background-color: white; }
   .Menu-header .Menu-header-bot {
     border-width: 1px;
     border-style: solid;

@@ -39,7 +39,10 @@ const Admin = () => {
 
     let [dataAllVideoAdmin, setdataAllVideoAdmin] = useState([])
 
+    let [videoKey, setvideoKey] = useState(null)
+
     let dataAllVideoRedux = useSelector(state => state.admin.dataAllVideo)
+    let dataSearchKeyRedux = useSelector(state => state.admin.dataSearchKey)
 
     useEffect(async () => {
 
@@ -52,6 +55,7 @@ const Admin = () => {
         }
 
 
+
     }, [])
 
     useEffect(async () => {
@@ -62,8 +66,11 @@ const Admin = () => {
 
         }
 
+        setvideoKey(dataSearchKeyRedux)
 
-    }, [dataAllVideoRedux])
+
+    }, [dataAllVideoRedux, dataSearchKeyRedux])
+    let [key, setkey] = useState('')
 
     const handleUpdateOneVideo = (item) => {
         setinforOneVideo(item)
@@ -83,6 +90,21 @@ const Admin = () => {
 
 
     }
+    const onChangeInputKey = (event) => {
+        let event1 = event.target.value;
+        console.log('Gia trị là ', event)
+
+
+        setkey(event1)
+
+    }
+    const handleSearchKey = async () => {
+        await dispatch(actions.handleSearchKey({
+            text: key
+
+        }))
+
+    }
 
 
 
@@ -95,8 +117,13 @@ const Admin = () => {
                         Wellcom, Admin
                     </div>
                     <div className='admin-menu-top-search'>
-                        <input className='admin-menu-top-search-input' type='text' placeholder='tìm kiếm' />
-                        <i className="fas fa-search search-icon" style={{ cursor: 'pointer' }}></i>
+                        <input className='admin-menu-top-search-input' type='text' placeholder='tìm kiếm'
+                            onChange={(event) => onChangeInputKey(event)}
+                        />
+                        <div
+                            onClick={() => { handleSearchKey() }}
+                        >      <i className="fas fa-search search-icon" style={{ cursor: 'pointer' }}
+                        ></i></div>
 
 
                     </div>
@@ -108,6 +135,42 @@ const Admin = () => {
                 </div>
             </div>
             <div className='admin-table'>
+                <div className='admin-table-top'>
+                    <table>
+                        <tr>
+                            <th>id</th>
+                            <th>Tên phim</th>
+                            <th>Thể loại</th>
+                            <th>Quốc gia</th>
+                            <th>Chỉnh sửa</th>
+                            <th>Xóa</th>
+                        </tr>
+
+                        {videoKey && videoKey.length > 0 &&
+                            videoKey.map((item, index) => {
+                                return (
+                                    <tr key={index}>
+                                        <td>{item._id}</td>
+                                        <td>{item.movieName}</td>
+                                        <td>{item.category}</td>
+                                        <td>{item.country}</td>
+                                        <td><button type="button" class="btn btn-warning"
+                                            onClick={() => { handleUpdateOneVideo(item) }}
+                                        >update</button></td>
+                                        <td><button type="button" class="btn btn-danger"
+                                            onClick={() => { handleDeleteOneVideo(item._id) }}
+                                        >delete</button></td>
+                                    </tr>
+                                )
+
+                            })
+
+                        }
+
+
+                    </table>
+
+                </div>
                 <div className='admin-table-top'>
                     <table>
                         <tr>

@@ -48,7 +48,7 @@
     border-width: 1px;
     border-style: solid;
     width: 100%;
-    height: 500px;
+    height: 1000px;
     display: flex;
     flex-direction: column;
     padding: 20px; }
@@ -56,7 +56,7 @@
       border-width: 1px;
       border-style: solid;
       width: 100%;
-      height: 80%;
+      height: 40%;
       display: flex; }
       .admin .admin-table .admin-table-top table {
         font-family: arial, sans-serif;

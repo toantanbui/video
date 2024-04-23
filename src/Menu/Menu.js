@@ -59,7 +59,9 @@ const Menu = () => {
     return (
         <div className='Menu-header'>
             <div className='Menu-header-top'>
-                <div className='Menu-header-top-title'>PhimHay.xyz</div>
+                <div className='Menu-header-top-title'
+                    onClick={() => { handleClickHome() }}
+                >PhimHay.xyz</div>
                 <div className='Menu-header-top-search'>
                     <input className='Menu-header-top-search-search' type='text' placeholder='tìm kiếm'
                         onChange={(event) => onChangeInputKey(event)}

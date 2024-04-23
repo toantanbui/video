@@ -60,7 +60,7 @@
         border-width: 1px;
         border-style: solid;
         width: 100%;
-        height: 500px;
+        height: 1000px;
         display: flex;
         flex-direction: column;
         padding: 20px;
@@ -69,7 +69,7 @@
             border-width: 1px;
             border-style: solid;
             width: 100%;
-            height: 80%;
+            height: 40%;
             display: flex;
 
 
@@ -91,6 +91,8 @@
                 background-color: #dddddd;
             }
         }
+
+
 
         .admin-table-bottom {
             border-width: 1px;

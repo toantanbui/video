@@ -269,7 +269,7 @@ const DetailedInfor = (props) => {
                             allVideoByTime && allVideoByTime.map((item, index) => {
                                 return (<Elements1 movieName={item.movieName} duration={item.duration}
                                     parameterName={item.parameterName}
-                                    id={item._id}
+                                    id={item._id} image={item.image}
                                     handleClickDetailedInfor={handleClickDetailedInfor}
                                 />)
                             })
