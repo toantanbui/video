@@ -61,11 +61,29 @@ const Elements = (props) => {
             style={{ backgroundImage: `url(${image})` }}
         >
             <div className='Elements-top'>
-                <span className='Elements-top-en'>Thuyết minh</span>
+                <span className='Elements-top-en'
+                    style={{
+                        backgroundColor: 'white', height: '30px',
+                        borderRadius: '10px'
+
+                    }}
+                >Thuyết minh</span>
             </div>
-            <div className='Elements-bottom'>
-                <div className='Elements-bottom-time'>{props.duration}</div>
-                <div className='Elements-bottom-name'>{props.movieName}</div>
+            <div className='Elements-bottom'
+
+            >
+                <div className='Elements-bottom-time'
+                    style={{
+                        backgroundColor: 'white',
+                        borderRadius: '10px',
+                    }}
+                >{props.duration}</div>
+                <div className='Elements-bottom-name'
+                    style={{
+                        backgroundColor: 'white',
+                        borderRadius: '10px',
+                    }}
+                >{props.movieName}</div>
 
             </div>
 

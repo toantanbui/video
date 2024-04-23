@@ -49,6 +49,9 @@ const handleSearchKeyAPI = (data) => {
     return axios.post('/api/get-video-text-search', data)
 }
 
+const handleSearchMenuAPI = (data) => {
+    return axios.post('/api/get-video-by-category-or-country', data)
+}
 
 
 
@@ -62,7 +65,8 @@ const handleSearchKeyAPI = (data) => {
 export {
     handleCreateVideoAPI, handleGetAllVideoAPI, handleUpdateVideoAPI, handleDeleteVideoAPI,
     handleGetOneVideoByMythologyAPI, handleGetOneVideoByIdAPI, handleGetOneVideoByFamilyAPI,
-    handleGetDataLogin, handleGetDataLogout, handleGetAllVideoByTimeAPI, handleSearchKeyAPI
+    handleGetDataLogin, handleGetDataLogout, handleGetAllVideoByTimeAPI, handleSearchKeyAPI,
+    handleSearchMenuAPI
 
 
 }

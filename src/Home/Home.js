@@ -169,6 +169,9 @@ const Home = () => {
 
     const handlePageClick = (event) => {
         console.log('event', event.selected)
+
+
+
     }
 
 
@@ -193,7 +196,7 @@ const Home = () => {
                             Phim Thần Thoại
                         </div>
                         <div className='Home-content-left-one-content'>
-                            {
+                            {!_.isEmpty(mythologyHome) ?
                                 mythologyHome && mythologyHome.map((item, index) => {
                                     return (<Elements movieName={item.movieName} duration={item.duration}
                                         parameterName={item.parameterName}
@@ -201,7 +204,12 @@ const Home = () => {
                                         handleClickDetailedInfor={handleClickDetailedInfor}
 
                                     />)
-                                })
+                                }) : <Audio
+                                    heigth="100"
+                                    width="100"
+                                    color='grey'
+                                    ariaLabel='loading'
+                                />
                             }
 
                         </div>
@@ -211,7 +219,7 @@ const Home = () => {
                             Phim Gia Đình
                         </div>
                         <div className='Home-content-left-one-content'>
-                            {
+                            {!_.isEmpty(familyHome) ?
                                 familyHome && familyHome.map((item, index) => {
                                     return (<Elements movieName={item.movieName} duration={item.duration}
                                         parameterName={item.parameterName}
@@ -219,7 +227,12 @@ const Home = () => {
                                         handleClickDetailedInfor={handleClickDetailedInfor}
 
                                     />)
-                                })
+                                }) : <Audio
+                                    heigth="100"
+                                    width="100"
+                                    color='grey'
+                                    ariaLabel='loading'
+                                />
                             }
                         </div>
                     </div>
@@ -229,7 +242,7 @@ const Home = () => {
                             Phim khác
                         </div>
                         <div className='Home-content-left-three-content'>
-                            {
+                            {!_.isEmpty(allVideo) ?
                                 allVideo && allVideo.map((item, index) => {
                                     return (<Elements movieName={item.movieName} duration={item.duration}
                                         parameterName={item.parameterName}
@@ -237,7 +250,13 @@ const Home = () => {
                                         handleClickDetailedInfor={handleClickDetailedInfor}
 
                                     />)
-                                })
+                                }) :
+                                <Audio
+                                    heigth="100"
+                                    width="100"
+                                    color='grey'
+                                    ariaLabel='loading'
+                                />
                             }
                         </div>
                         <div className='Home-content-left-three-pagination'>
@@ -246,8 +265,8 @@ const Home = () => {
                                 breakLabel="..."
                                 nextLabel="next >"
                                 onPageChange={handlePageClick}
-                                pageRangeDisplayed={10}
-                                pageCount={69}
+                                pageRangeDisplayed={3}
+                                pageCount={10}
                                 previousLabel="< previous"
                                 // renderOnZeroPageCount={null}
 

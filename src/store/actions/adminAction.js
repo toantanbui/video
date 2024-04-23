@@ -3,7 +3,8 @@ import actionTypes from "./actionTypes";
 import {
     handleCreateVideoAPI, handleGetAllVideoAPI, handleUpdateVideoAPI, handleDeleteVideoAPI,
     handleGetOneVideoByMythologyAPI, handleGetOneVideoByIdAPI, handleGetOneVideoByFamilyAPI,
-    handleGetDataLogin, handleGetDataLogout, handleGetAllVideoByTimeAPI, handleSearchKeyAPI
+    handleGetDataLogin, handleGetDataLogout, handleGetAllVideoByTimeAPI, handleSearchKeyAPI,
+    handleSearchMenuAPI
 
 
 } from '../../services/userService'
@@ -300,6 +301,42 @@ export const handleSearchKey = (data1) => {
             } if (res && res.errCode === 3) {
                 dispatch({
                     type: actionTypes.SEARCH_KEY,
+
+                    errMessage: res.errMessage,
+                    data: null
+
+
+                })
+
+            }
+
+
+        } catch (e) {
+            console.log(e)
+
+        }
+    }
+}
+
+export const handleSearchMenu = (data1) => {
+    return async (dispatch, getState) => {
+        try {
+            let res = await handleSearchMenuAPI(data1);
+
+            if (res && res.errCode === 0) {
+                dispatch({
+                    type: actionTypes.SEARCH_MENU,
+
+                    errMessage: res.errMessage,
+                    data: res.data
+
+
+                })
+
+            }
+            if (res && res.errCode === 3) {
+                dispatch({
+                    type: actionTypes.SEARCH_MENU,
 
                     errMessage: res.errMessage,
                     data: null

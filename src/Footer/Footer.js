@@ -31,7 +31,7 @@ const Footer = () => {
     return (
         <div className='Footer-footer'>
             <div className='Footer-footer-image' >
-                Thông tin của trang được thiết kế bởi Toàn
+                Trang web được thiết kế bởi Toàn
 
             </div>
             <div className='Footer-footer-three'>
@@ -39,7 +39,8 @@ const Footer = () => {
                     <ul className='Footer-footer-three-li-ul'>
                         <li className='Footer-footer-three-li-ul-li'><a href="">Giới thiệu</a></li>
                         <li className='Footer-footer-three-li-ul-li'><a href="">Liên hệ chúng tôi</a></li>
-                        <li className='Footer-footer-three-li-ul-li'><a href="">Chính sách riêng tư</a></li>
+                        <li className='Footer-footer-three-li-ul-li'><a href="
+                        https://www.youtube.com/watch?v=fdJtwP_FQ04">Chính sách riêng tư</a></li>
                         <li className='Footer-footer-three-li-ul-li'><a href="">Khiếu nạn bản quyền</a></li>
 
 

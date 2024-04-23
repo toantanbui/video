@@ -19,6 +19,7 @@ import Elements from './Elements/Elements';
 import Elements1 from './Elements1/Elements1';
 import Watch from './Watch/Watch';
 import SearchKey from './SearchKey/SearchKey';
+import SearchMenu from './SearchMenu/SearchMenu';
 
 import { userIsAuthenticated, userIsNotAuthenticated } from './authentication/authentication'
 
@@ -44,6 +45,7 @@ const App = () => {
           <Route path={path.ELEMENTS1} component={(Elements1)} />
           <Route path={path.WATCH} component={(Watch)} />
           <Route path={path.SEARCHKEY} component={(SearchKey)} />
+          <Route path={path.SEARCHMENU} component={(SearchMenu)} />
 
 
         </Switch>

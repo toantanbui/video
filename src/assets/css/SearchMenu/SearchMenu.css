@@ -6,32 +6,32 @@ a {
   text-decoration: none !important;
   color: white; }
 
-.SearchKey {
+.SearchMenu {
   border-width: 1px;
   border-style: solid;
   width: 100%;
   height: auto;
   display: flex;
   flex-direction: column; }
-  .SearchKey .SearchKey-header {
+  .SearchMenu .SearchMenu-header {
     border-width: 1px;
     border-style: solid;
     width: 100%;
     height: 200px;
     display: flex;
     flex-direction: column; }
-    .SearchKey .SearchKey-header .SearchKey-header-top {
+    .SearchMenu .SearchMenu-header .SearchMenu-header-top {
       border-width: 1px;
       border-style: solid;
       width: 100%;
       height: 100%;
       display: flex; }
-    .SearchKey .SearchKey-header .SearchKey-header-bot {
+    .SearchMenu .SearchMenu-header .SearchMenu-header-bot {
       border-width: 1px;
       border-style: solid;
       width: 100%;
       height: auto; }
-      .SearchKey .SearchKey-header .SearchKey-header-bot .SearchKey-header-bot-header {
+      .SearchMenu .SearchMenu-header .SearchMenu-header-bot .SearchMenu-header-bot-header {
         padding: 0px 8%;
         display: flex;
         justify-content: space-between;
@@ -39,20 +39,20 @@ a {
         height: 50px;
         background-color: #282f33;
         cursor: pointer; }
-        .SearchKey .SearchKey-header .SearchKey-header-bot .SearchKey-header-bot-header .SearchKey-header-bot-header-login:active {
+        .SearchMenu .SearchMenu-header .SearchMenu-header-bot .SearchMenu-header-bot-header .SearchMenu-header-bot-header-login:active {
           background-color: white; }
-        .SearchKey .SearchKey-header .SearchKey-header-bot .SearchKey-header-bot-header .SearchKey-header-bot-header-login:hover {
+        .SearchMenu .SearchMenu-header .SearchMenu-header-bot .SearchMenu-header-bot-header .SearchMenu-header-bot-header-login:hover {
           opacity: 0.5; }
-        .SearchKey .SearchKey-header .SearchKey-header-bot .SearchKey-header-bot-header .SearchKey-header-bot-header-menu {
+        .SearchMenu .SearchMenu-header .SearchMenu-header-bot .SearchMenu-header-bot-header .SearchMenu-header-bot-header-menu {
           display: flex;
           margin-bottom: 0px;
           list-style: none; }
-        .SearchKey .SearchKey-header .SearchKey-header-bot .SearchKey-header-bot-header .SearchKey-header-bot-header-menu > li {
+        .SearchMenu .SearchMenu-header .SearchMenu-header-bot .SearchMenu-header-bot-header .SearchMenu-header-bot-header-menu > li {
           padding: 12px 20px;
           border-right: 1px solid #fff; }
-        .SearchKey .SearchKey-header .SearchKey-header-bot .SearchKey-header-bot-header .SearchKey-header-bot-header-menu > li:last-child {
+        .SearchMenu .SearchMenu-header .SearchMenu-header-bot .SearchMenu-header-bot-header .SearchMenu-header-bot-header-menu > li:last-child {
           border: none; }
-        .SearchKey .SearchKey-header .SearchKey-header-bot .SearchKey-header-bot-header .SearchKey-header-bot-header-menu > li > ul {
+        .SearchMenu .SearchMenu-header .SearchMenu-header-bot .SearchMenu-header-bot-header .SearchMenu-header-bot-header-menu > li > ul {
           position: absolute;
           background-color: #214467;
           list-style: none;
@@ -60,14 +60,14 @@ a {
           width: 200px;
           display: none;
           padding-left: 1px; }
-        .SearchKey .SearchKey-header .SearchKey-header-bot .SearchKey-header-bot-header .SearchKey-header-bot-header-menu > li > ul > li {
+        .SearchMenu .SearchMenu-header .SearchMenu-header-bot .SearchMenu-header-bot-header .SearchMenu-header-bot-header-menu > li > ul > li {
           padding: 20px;
           border-bottom: 1px solid #fff; }
-        .SearchKey .SearchKey-header .SearchKey-header-bot .SearchKey-header-bot-header .SearchKey-header-bot-header-menu > li > ul > li:hover {
+        .SearchMenu .SearchMenu-header .SearchMenu-header-bot .SearchMenu-header-bot-header .SearchMenu-header-bot-header-menu > li > ul > li:hover {
           background-color: yellow; }
-        .SearchKey .SearchKey-header .SearchKey-header-bot .SearchKey-header-bot-header .SearchKey-header-bot-header-menu > li:hover > ul {
+        .SearchMenu .SearchMenu-header .SearchMenu-header-bot .SearchMenu-header-bot-header .SearchMenu-header-bot-header-menu > li:hover > ul {
           display: block; }
-  .SearchKey .SearchKey-content {
+  .SearchMenu .SearchMenu-content {
     border-width: 1px;
     border-style: solid;
     width: 100%;
@@ -76,7 +76,7 @@ a {
     padding-left: 8%;
     padding-right: 8%;
     flex-direction: column; }
-    .SearchKey .SearchKey-content .SearchKey-content-top {
+    .SearchMenu .SearchMenu-content .SearchMenu-content-top {
       border-width: 1px;
       border-style: solid;
       width: 100%;
@@ -85,14 +85,14 @@ a {
       align-items: center;
       font-size: 40px;
       color: red; }
-    .SearchKey .SearchKey-content .SearchKey-content-bottom {
+    .SearchMenu .SearchMenu-content .SearchMenu-content-bottom {
       border-width: 1px;
       border-style: solid;
       width: 100%;
       height: auto;
       display: flex;
       flex-wrap: wrap; }
-  .SearchKey .SearchKey-footer {
+  .SearchMenu .SearchMenu-footer {
     border-width: 4px;
     border-style: solid;
     width: 100%;
@@ -104,7 +104,7 @@ a {
     padding-right: 20%;
     justify-content: space-between;
     border-top-color: black; }
-  .SearchKey .Footer-end {
+  .SearchMenu .Footer-end {
     border-width: 1px;
     border-style: solid;
     width: 100%;
@@ -117,7 +117,7 @@ a {
     padding-right: 20px; }
 
 @media (max-width: 768px) {
-  .SearchKey .SearchKey-content {
+  .SearchMenu .SearchMenu-content {
     border-width: 1px;
     border-style: solid;
     width: 100%;
@@ -127,7 +127,7 @@ a {
     padding-right: 0;
     flex-direction: column;
     margin-top: 20px; }
-  .SearchKey .SearchKey-content .SearchKey-content-top {
+  .SearchMenu .SearchMenu-content .SearchMenu-content-top {
     border-width: 1px;
     border-style: solid;
     width: 100%;

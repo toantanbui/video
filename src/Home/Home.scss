@@ -304,4 +304,44 @@ a {
 		justify-content: space-between;
 		border-top-color: black;
 	}
+
+	.Home .Home-content {
+		border-width: 1px;
+		border-style: solid;
+		width: 100%;
+		min-height: 500px;
+		display: flex;
+		padding-left: 0;
+		padding-right: 0;
+		flex-direction: column;
+		margin-top: 20px;
+	}
+
+	.Home .Home-content .Home-content-left {
+		border-width: 1px;
+		border-style: solid;
+		width: 100%;
+		height: auto;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.Home .Home-content .Home-content-right .Home-content-right-content {
+		border-width: 1px;
+		border-style: solid;
+		width: 100%;
+		height: auto;
+		display: flex;
+		/* flex-direction: column; */
+		flex-wrap: wrap;
+	}
+
+	.Home .Home-content .Home-content-right {
+		border-width: 1px;
+		border-style: solid;
+		width: 100%;
+		height: auto;
+		display: flex;
+		flex-direction: column;
+	}
 }

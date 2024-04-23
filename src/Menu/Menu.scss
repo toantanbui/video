@@ -164,6 +164,39 @@
         padding: 10px 5px;
     }
 
+    .Menu-header {
+        border-width: 1px;
+        border-style: solid;
+        width: 100%;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Menu-header .Menu-header-top {
+        border-width: 1px;
+        border-style: solid;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        background-color: #1c1c1c;
+        flex-direction: column;
+    }
+
+    .Menu-header .Menu-header-top .Menu-header-top-search {
+        border-width: 1px;
+        border-style: solid;
+        width: 200px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        background-color: white;
+    }
+
 
 
 }

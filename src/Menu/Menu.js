@@ -54,6 +54,23 @@ const Menu = () => {
         history.push(`/searchkey`);
     }
 
+    const handleClickCategory = async (data) => {
+        console.log(data)
+        await dispatch(actions.handleSearchMenu({
+            category: data
+
+        }))
+        history.push(`/searchMenu`);
+    }
+
+    const handleClickCountry = async (data) => {
+        console.log(data)
+        await dispatch(actions.handleSearchMenu({
+            country: data
+
+        }))
+        history.push(`/searchMenu`);
+    }
 
 
     return (
@@ -82,29 +99,65 @@ const Menu = () => {
                         >Trang chủ</a>
 
                         </li>
-                        <li><a href="">Thể loại</a>
+                        <li><a
+                            style={{ color: 'white' }}
+                        >Thể loại</a>
                             <ul>
-                                <li><a href="">Cổ trang</a></li>
-                                <li><a href="">Gia đình</a></li>
-                                <li><a href="">Khoa học</a></li>
-                                <li><a href="">Hoạt hình</a></li>
-                                <li><a href="">Chiến tranh</a></li>
+                                <li><a
+                                    style={{ color: 'white' }}
+                                    onClick={() => { handleClickCategory('co-trang') }}
+                                >Cổ trang</a></li>
+                                <li><a
+                                    style={{ color: 'white' }}
+                                    onClick={() => { handleClickCategory('gia-dinh') }}
+                                >Gia đình</a></li>
+                                <li><a
+                                    style={{ color: 'white' }}
+                                    onClick={() => { handleClickCategory('than-thoai') }}
+                                >Thần Thoại</a></li>
+                                <li><a
+                                    style={{ color: 'white' }}
+                                    onClick={() => { handleClickCategory('hoat-hinh') }}
+                                >Hoạt hình</a></li>
+                                <li><a
+                                    style={{ color: 'white' }}
+                                    onClick={() => { handleClickCategory('chien-tranh') }}
+                                >Chiến tranh</a></li>
 
 
                             </ul>
                         </li>
-                        <li><a href="">Quốc gia</a>
+                        <li><a
+                            style={{ color: 'white' }}
+                        >Quốc gia</a>
                             <ul>
-                                <li><a href="">Mỹ</a></li>
-                                <li><a href="">Nhật Bản</a></li>
-                                <li><a href="">Hàn Quốc</a></li>
-                                <li><a href="">Việt Nam</a></li>
-                                <li><a href="">Trung Quốc</a></li>
+                                <li><a
+                                    style={{ color: 'white' }}
+                                    onClick={() => { handleClickCountry('my') }}
+                                >Mỹ</a></li>
+                                <li><a
+                                    style={{ color: 'white' }}
+                                    onClick={() => { handleClickCountry('nhat-ban') }}
+                                >Nhật Bản</a></li>
+                                <li><a
+                                    style={{ color: 'white' }}
+                                    onClick={() => { handleClickCountry('han-quoc') }}
+                                >Hàn Quốc</a></li>
+                                <li><a
+                                    style={{ color: 'white' }}
+                                    onClick={() => { handleClickCountry('viet-nam') }}
+                                >Việt Nam</a></li>
+                                <li><a
+                                    style={{ color: 'white' }}
+                                    onClick={() => { handleClickCountry('trung-quoc') }}
+                                >Trung Quốc</a></li>
 
 
                             </ul>
                         </li>
-                        <li><a href="" style={{ textDecoration: "none" }}>Phim bộ</a>
+                        <li><a
+
+                            style={{ textDecoration: 'none', color: 'white' }}>Phim bộ</a>
                             {/* <ul>
                                     <li><a href="">giới thiệu</a></li>
                                     <li><a href="">Tuyển sinh</a></li>
@@ -115,7 +168,9 @@ const Menu = () => {
 
                                 </ul> */}
                         </li>
-                        <li><a href="" >Phim lẻ</a>
+                        <li><a
+                            style={{ color: 'white' }}
+                        >Phim lẻ</a>
 
                         </li>
                     </ul>

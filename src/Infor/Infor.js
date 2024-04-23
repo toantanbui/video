@@ -218,17 +218,17 @@ const Infor = (props) => {
 
         }
 
-        setmovieName('')
-        setparameterName('')
-        setduration('')
-        setreleaseYear('')
-        setdirector('')
-        setaction('')
-        setcategory('')
-        setmovieLink('')
-        setcountry('')
-        setmovieContent('')
-        setimage('')
+        // setmovieName('')
+        // setparameterName('')
+        // setduration('')
+        // setreleaseYear('')
+        // setdirector('')
+        // setaction('')
+        // setcategory('')
+        // setmovieLink('')
+        // setcountry('')
+        // setmovieContent('')
+        // setimage('')
 
     }
 

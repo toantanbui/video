@@ -7,6 +7,9 @@
     flex-direction: column;
     //background-image: url('../../images/abc.jpg');
     background-size: contain;
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+    margin-right: 7px;
     cursor: pointer;
 
     &:hover {
@@ -23,6 +26,13 @@
         width: 100%;
         height: 70%;
         display: flex;
+
+        .Elements-top-en {
+            // background-color: white;
+            // height: 30px;
+            // opacity: 0.9;
+            // border-radius: 10px;
+        }
 
     }
 

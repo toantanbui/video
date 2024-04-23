@@ -9,7 +9,8 @@ export const path = {
     ELEMENTS1: '/elements1',
     WATCH: '/watch/:id/:parameterName',
     PAGINATION: '/pagination',
-    SEARCHKEY: '/searchkey'
+    SEARCHKEY: '/searchkey',
+    SEARCHMENU: '/searchMenu'
 
 }
 

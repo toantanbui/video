@@ -17,7 +17,8 @@
     border-style: solid;
     width: 30%;
     height: 100%;
-    display: flex; }
+    display: flex;
+    background-repeat: no-repeat; }
   .Elements1 .Elements1-infor {
     border-width: 1px;
     border-style: solid;

@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux';
 
 import * as actions from '../store/actions';
-import '../assets/css/SearchKey/SearchKey.css';
+import '../assets/css/SearchMenu/SearchMenu.css';
 import Footer from '../Footer/Footer';
 import Elements from '../Elements/Elements';
 import Elements1 from '../Elements1/Elements1';
@@ -24,7 +24,7 @@ const _ = require('lodash');
 
 
 
-const SearchKey = () => {
+const SearchMenu = () => {
 
 
     const dispatch = useDispatch()
@@ -32,20 +32,20 @@ const SearchKey = () => {
     let [key, setkey] = useState(null)
     let [isLoading, setisLoading] = useState(false)
 
-    let dataSearchKeyRedux = useSelector(state => state.admin.dataSearchKey)
+    let dataSearchMenuRedux = useSelector(state => state.admin.dataSearchMenu)
 
 
 
 
     useEffect(async () => {
 
-        // if (dataSearchKeyRedux !== null) {
-        //     setkey(dataSearchKeyRedux)
+        // if (dataSearchMenuRedux !== null) {
+        //     setkey(dataSearchMenuRedux)
         // }
-        setkey(dataSearchKeyRedux)
+        setkey(dataSearchMenuRedux)
 
 
-    }, [dataSearchKeyRedux])
+    }, [dataSearchMenuRedux])
 
 
 
@@ -120,21 +120,21 @@ const SearchKey = () => {
 
 
     return (
-        <div className='SearchKey'>
+        <div className='SearchMenu'>
             {console.log('gia tri key', key)}
-            <div className='SearchKey-header'>
+            <div className='SearchMenu-header'>
                 <Menu />
             </div>
 
 
-            <div className='SearchKey-content'>
+            <div className='SearchMenu-content'>
 
-                <div className='SearchKey-content-top'>
-                    <span className='SearchKey-content-top-title'>
+                <div className='SearchMenu-content-top'>
+                    <span className='SearchMenu-content-top-title'>
                         Có {!_.isEmpty(key) === true ? key && key.length : '0'} kết quả tìm kiếm
                     </span>
                 </div>
-                <div className='SearchKey-content-bottom'>
+                <div className='SearchMenu-content-bottom'>
                     {
                         key && key.map((item, index) => {
                             return (<Elements movieName={item.movieName} duration={item.duration}
@@ -150,7 +150,7 @@ const SearchKey = () => {
 
 
             </div>
-            <div className='SearchKey-footer'>
+            <div className='SearchMenu-footer'>
                 <Footer />
             </div>
             <div className='Footer-end'>
@@ -161,7 +161,7 @@ const SearchKey = () => {
     );
 }
 
-export default SearchKey;
+export default SearchMenu;
 
 
 

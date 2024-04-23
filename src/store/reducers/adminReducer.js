@@ -11,7 +11,8 @@ const initialState = {
     dataOneVideoFamily: null,
     dataOneVideoId: null,
     dataAllVideoByTime: null,
-    dataSearchKey: null
+    dataSearchKey: null,
+    dataSearchMenu: null
 
 
 
@@ -86,6 +87,14 @@ const adminReducer = (state = initialState, action) => {
             }
         case actionTypes.SEARCH_KEY:
             state.dataSearchKey = action.data
+
+            console.log('action giá trị key', action.data)
+
+            return {
+                ...state,
+            }
+        case actionTypes.SEARCH_MENU:
+            state.dataSearchMenu = action.data
 
             console.log('action giá trị key', action.data)
 

@@ -7,22 +7,14 @@
   background-color: #222d38;
   list-style: none;
   padding-left: 8%;
-  padding-right: 20%;
   justify-content: space-between;
   border-top-color: black; }
   .Footer-footer .Footer-footer-image {
-    border-width: 1px;
-    border-style: solid;
-    border-color: black;
     width: auto;
     color: white; }
   .Footer-footer .Footer-footer-infor {
-    border-width: 1px;
-    border-style: solid;
     width: auto; }
   .Footer-footer .Footer-footer-three {
-    border-width: 1px;
-    border-style: solid;
     width: auto; }
     .Footer-footer .Footer-footer-three .Footer-footer-three-li {
       list-style: none; }
